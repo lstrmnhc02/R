@@ -2,16 +2,16 @@ function nextPage() {
     window.location.href = "yes.html"; // Redirect to yes.html when Yes is clicked
 }
 
-function moveButton(event) {
+function moveButton() {
     const button = document.getElementById("noButton");
 
-    // Prevent focus issues by removing focus immediately
+    // Ensure the button is always clickable by resetting its focus
     button.blur();
 
-    // Ensure the button is positioned absolutely
+    // Set absolute positioning so it can move freely
     button.style.position = "absolute";
 
-    // Get the viewport size to keep the button within bounds
+    // Get the viewport size to prevent the button from going off-screen
     const maxX = window.innerWidth - button.clientWidth;
     const maxY = window.innerHeight - button.clientHeight;
 
@@ -19,10 +19,11 @@ function moveButton(event) {
     const randomX = Math.floor(Math.random() * maxX);
     const randomY = Math.floor(Math.random() * maxY);
 
-    // Apply the new position
+    // Move the button to a random position
     button.style.left = `${randomX}px`;
     button.style.top = `${randomY}px`;
 
-    // Ensure button is re-clickable even if it's hovered (removes focus lock)
-    setTimeout(() => button.style.pointerEvents = "auto", 50);
+    // Ensure the button remains clickable even after clicking while hovered
+    button.style.pointerEvents = "none";  // Temporarily disable pointer events
+    setTimeout(() => button.style.pointerEvents = "auto", 100);  // Re-enable after 100ms
 }
