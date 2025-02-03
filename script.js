@@ -4,15 +4,19 @@ function nextPage() {
 
 function moveButton() {
     const button = document.getElementById("noButton");
-    const container = document.querySelector(".container");
 
-    const maxX = container.clientWidth - button.clientWidth;
-    const maxY = container.clientHeight - button.clientHeight;
+    // Ensure the button is positioned absolutely
+    button.style.position = "absolute";
 
+    // Get the viewport size to keep the button within bounds
+    const maxX = window.innerWidth - button.clientWidth;
+    const maxY = window.innerHeight - button.clientHeight;
+
+    // Generate random positions within the viewport
     const randomX = Math.floor(Math.random() * maxX);
     const randomY = Math.floor(Math.random() * maxY);
 
-    button.style.position = "absolute"; // Ensure positioning is absolute
+    // Apply the new position
     button.style.left = `${randomX}px`;
     button.style.top = `${randomY}px`;
 }
