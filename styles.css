@@ -72,6 +72,10 @@ body {
     color: #ff4757;
 }
 
+#noButton:focus {
+    outline: none;  /* Removes focus outline */
+}
+
 @keyframes wiggle {
     0% { transform: rotate(0deg); }
     25% { transform: rotate(-5deg); }
