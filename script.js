@@ -5,9 +5,6 @@ function nextPage() {
 function moveButton() {
     const button = document.getElementById("noButton");
 
-    // Remove focus so the button can be clicked repeatedly without delay
-    button.blur();
-
     // Ensure the button is positioned absolutely
     button.style.position = "absolute";
 
