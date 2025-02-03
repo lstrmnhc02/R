@@ -2,8 +2,11 @@ function nextPage() {
     window.location.href = "yes.html"; // Redirect to yes.html when Yes is clicked
 }
 
-function moveButton() {
+function moveButton(event) {
     const button = document.getElementById("noButton");
+
+    // Prevent focus issues by removing focus immediately
+    button.blur();
 
     // Ensure the button is positioned absolutely
     button.style.position = "absolute";
@@ -19,4 +22,7 @@ function moveButton() {
     // Apply the new position
     button.style.left = `${randomX}px`;
     button.style.top = `${randomY}px`;
+
+    // Ensure button is re-clickable even if it's hovered (removes focus lock)
+    setTimeout(() => button.style.pointerEvents = "auto", 50);
 }
