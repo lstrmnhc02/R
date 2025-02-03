@@ -2,8 +2,11 @@ function nextPage() {
     window.location.href = "yes.html"; // Redirect to yes.html when Yes is clicked
 }
 
-function moveButton() {
+function moveButton(event) {
     const button = document.getElementById("noButton");
+
+    // Prevent the button from focusing (which may cause styling issues)
+    button.blur(); 
 
     // Ensure the button is positioned absolutely
     button.style.position = "absolute";
@@ -20,3 +23,4 @@ function moveButton() {
     button.style.left = `${randomX}px`;
     button.style.top = `${randomY}px`;
 }
+
