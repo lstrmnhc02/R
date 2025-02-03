@@ -72,16 +72,6 @@ body {
     color: #ff4757;
 }
 
-#noButton:focus {
-    outline: none;  /* Removes focus outline */
-}
-
-#noButton {
-    position: absolute; /* Ensures it can move */
-    transition: top 0.2s, left 0.2s; /* Smooth movement */
-}
-
-
 @keyframes wiggle {
     0% { transform: rotate(0deg); }
     25% { transform: rotate(-5deg); }
